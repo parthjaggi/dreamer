@@ -169,8 +169,8 @@ def load_episodes(directory, rescan, length=None, balance=False, seed=0):
           print(f'Could not load episode: {e}')
           continue
         cache[filename] = episode
-    keys = list(cache.keys())
-    for index in random.choice(len(keys), rescan):
+    keys = list(cache.keys()) # cache has all episode files
+    for index in random.choice(len(keys), rescan): # rescan should be in place of replace.
       episode = cache[keys[index]]
       if length:
         total = len(next(iter(episode.values())))

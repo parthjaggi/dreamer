@@ -128,7 +128,7 @@ class Dreamer(tools.Module):
       self._step.assign_add(len(reset) * self._c.action_repeat)
     return action, state
 
-  @tf.function
+  # @tf.function
   def policy(self, obs, state, training):
     if state is None:
       latent = self._dynamics.initial(len(obs['image']))
@@ -150,9 +150,10 @@ class Dreamer(tools.Module):
     super().load(filename)
     self._should_pretrain()
 
-  @tf.function()
+  # @tf.function()
   def train(self, data, log_images=False):
-    self._strategy.experimental_run_v2(self._train, args=(data, log_images))
+    # self._strategy.experimental_run_v2(self._train, args=(data, log_images))
+    self._strategy.run(self._train, args=(data, log_images))
 
   def _train(self, data, log_images):
     with tf.GradientTape() as model_tape:

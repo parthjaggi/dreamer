@@ -1,0 +1,34 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "dreamer-boxing",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/dreamer.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--task",
+                "atari_boxing"
+            ],
+            "subProcess": true,
+            "justMyCode": false
+        },
+        {
+            "name": "planet-cheetah",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/planet/planet/scripts/train.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--params",
+                "{tasks: [cheetah_run]}",
+                "--logdir",
+                "."
+            ]
+        },
+    ]
+}
