@@ -4,3 +4,8 @@ __pycache__/
 ./dist
 ./logdir
 MUJOCO_LOG.TXT
+events.out.tfevents*
+metrics.jsonl
+episodes/
+.vscode/settings.json
+*-episodes/
